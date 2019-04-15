@@ -1,1 +1,465 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<title>jobEx.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h2 id="%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E6%9B%B8">職務経歴書</h2>
+<p>2018/10/03</p>
+<h3 id="%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB">プロフィール</h3>
+<p>・氏名：片岡　了一(RYOICHI, Kataoka)
+・関連URL：
+Qiita: https://qiita.com/Kata_Oka
+Twitter: https://twitter.com/je_suis_laterre
+Github: https://github.com/cheapthrillandwine</p>
+<h3 id="%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E6%A6%82%E8%A6%81">職務経歴(概要)</h3>
+<h4 id="%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E9%96%8B%E7%99%BA%E7%B5%8C%E9%A8%93">ソフトウェア開発経験</h4>
+<p>●機械学習システムの開発
+　・企画/要件定義/設計　9ヶ月
+　・プログラミング　9ヶ月
+●Webアプリケーションの開発
+　・Python, Node.js, Go, HTML/CSS/JSで合わせて1年程度
+●その他ソフトウェア開発経験
+　・パッケージソフト(ブラウザアプリケーション/JavaScript/SQL Server)</p>
+<h3 id="%E6%95%99%E8%82%B2">教育</h3>
+<h4 id="%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AE%E6%95%99%E8%82%B2%E3%83%BB%E8%82%B2%E6%88%90">エンジニアの教育・育成</h4>
+<p>・全社員向け英語講習会の企画、講師
+・新卒エンジニアOJT向けプレゼン作成
+・社内勉強会を開催
+・新人エンジニアのメンター</p>
+<h3 id="%E6%A5%AD%E5%8B%99%E5%A4%96%E6%B4%BB%E5%8B%95">業務外活動</h3>
+<p>・スタートアップ企業の立ち上げプロダクトの企画、開発(2018/10より進行中)
+・AIイベントにおける営業活動</p>
+<h3 id="%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%B9%E3%82%AD%E3%83%AB">プログラミングスキル</h3>
+<p>Python
+・3系から使用し10ヶ月ほど経験。2系から3系へのコードの修正も可能で、業務での使用に問題はない
+・機械学習に関するライブラリの利用も可能(例: Numpy, Scikitlearn, Pandas, Seaborn等)
+・実務では主にKerasを利用。このほか、Tensorflow, Pytorchを適宜使用している
+・画像処理ではOpenCV, Pillow, Mahotasを実務で利用し、Numpyによる画素操作も可能
+・Flask, Djangoでの実務経験がある</p>
+<p>JavaScript
+・フロントエンド開発の為、4ヶ月ほど経験
+・Node.jsは8系から使用し1ヶ月ほど経験。Azure functionを実装するため、2日で学習し3日で実装を行った
+・業務外でFlaskアプリ、Reactを学習しているため、読み書きに関しては問題なく可能</p>
+<p>Go
+・並列処理の学習と個人開発の為、1ヶ月ほど経験
+・PythonとGoでのマルチスレッドの性能比較を自社エンジニアに共有
+・個人開発ではブログアプリケーションをFirebaseとHugoを連携させるために行った</p>
+<h3 id="%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E7%8F%BE%E8%81%B7">職務経歴(現職)</h3>
+<h4 id="avinton%E3%82%B8%E3%83%A3%E3%83%91%E3%83%B3%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE">Avintonジャパン株式会社</h4>
+<h5 id="%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E9%96%8B%E7%99%BA">プロダクト開発</h5>
+<p>●リアルタイム物体検知AIサービス
+　・KPI/要件定義/市場調査/技術リサーチ/アルゴリズム仮説検証/プログラミングを担当
+●アナログメーター自動読み取りAIサービス
+　・KPI/要件定義/技術リサーチ/アルゴリズム仮説検証/プログラミングを担当
+　・既存サービス(C++で実装)のラッパーとして開発を実施
+●飲食店メニューの審美度自動判断サービス
+　・KPI/要件定義/技術リサーチ/アルゴリズム仮説検証/プログラミングを担当
+　・データ不足の為、クローラーを作成し適宜画像のスクレイピングを行った</p>
+<h5 id="%E3%81%9D%E3%81%AE%E4%BB%96%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E9%96%8B%E7%99%BA">その他プロダクト開発</h5>
+<p>●工場進捗工程自動判別サービス
+●360度カメラ人自動検知サービス
+　・オブザーバーとしてKPI/技術選定/PMO業務を担当</p>
+<h5 id="%E6%95%99%E8%82%B2">教育</h5>
+<p>●プレゼンテーション
+　・全社員及び新入社員、内定者向けに経歴、エンジニアリングについてのプレゼンテーションを定期的に実施</p>
+<p>●メンター
+　・若手社員にメンターとして、業務フォロー、メンタルケアを実施</p>
+<h3 id="%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E7%8F%BE%E8%81%B7%E4%BB%A5%E5%89%8D">職務経歴(現職以前)</h3>
+<h4 id="%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%82%B3%E3%83%BC%E3%83%89201703201712">株式会社オブジェクティブコード(2017/03~2017/12)</h4>
+<h5 id="cs%E6%A5%AD%E5%8B%99">CS業務</h5>
+<p>●国際法人でのカスタマーサポート
+(2017/03~2017/06)
+　・日本語、英語、フランス語でのCSを担当。チームマネジメントを兼務</p>
+<h5 id="%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E9%96%8B%E7%99%BA">プロダクト開発</h5>
+<p>●航空会社向けパッケージソフト再構築(2017/06~2017/12)
+　・日本初導入の海外製パッケージソフトで外部設計、ローカライズ、DB構築、単体テスト、パフォーマンステスト、出力帳票デザイン等を担当</p>
+<h5 id="%E6%95%99%E8%82%B2">教育</h5>
+<p>●英語講習会
+全社員向けに、エンジニアリングに必要な英語力を身に付けるためのトレーニングを企画。カリキュラム作成、コーチングも行った。
+●帰社会、勉強会の運営
+エンジニア向けに月1の帰社会及び勉強会を企画、運営した。エンジニアとしての知見共有とスキル取得における生産性向上を目的とした。</p>
+
+</body>
+</html>
